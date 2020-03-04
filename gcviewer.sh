@@ -4,7 +4,10 @@
 
 # Begin Output
 
-echo -e "\e[0m---------------------------------------------"
+echo -e "\e[0m---------------------------------------------------"
+
+if [ -f /usr/bin/gridcoinresearchd ]
+then
 
 # Check whether Gridcoin Wallet files exists
 if [ -f ~/.GridcoinResearch/wallet.dat  ] && [ -f ~/.GridcoinResearch/gridcoinresearch.conf ]
@@ -50,10 +53,17 @@ echo "Last TRX: $(jq .[0].amount <<< $j3) | Type: $(jq .[0].category <<< $j3)"
 # Print error if Gridcoin Wallet files does not exist
 else
 echo
-echo -e "\e[91mError: Gridcoin wallet data not found.\e[0m"
+echo -e "\e[91mError: Gridcoin Wallet data not found.\e[0m"
 echo
 fi
 
-echo -e "\e[0m---------------------------------------------"
+# Print error if Gridcoin Wallet files does not exist
+else
+echo
+echo -e "\e[91mError: Gridcoin Wallet (gridcoinresearchd) is not\ninstalled or cannot be found.\e[0m"
+echo
+fi
+
+echo -e "\e[0m---------------------------------------------------"
 
 # End Output
