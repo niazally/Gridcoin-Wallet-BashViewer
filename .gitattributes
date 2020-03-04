@@ -3,4 +3,4 @@
 .gitignore export-ignore
 
 # github files
-_config.yml
+_config.yml export-ignore
