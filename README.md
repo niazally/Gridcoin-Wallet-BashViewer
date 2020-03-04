@@ -5,4 +5,5 @@ The script can be used in conjunction with `watch` to create a continuous updati
 
 ### Requirements
 * Bash
+* Gridcoin Wallet (gridcoinresearchd)
 * jq - commandline JSON processor
